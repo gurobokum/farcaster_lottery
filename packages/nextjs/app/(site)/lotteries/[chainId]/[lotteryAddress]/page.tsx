@@ -36,7 +36,7 @@ export default function LotteryPage({
       },
       {
         ...lotteryContractData,
-        functionName: "TICKET_PRICE",
+        functionName: "ticketPrice",
       },
       {
         ...lotteryContractData,
@@ -44,7 +44,7 @@ export default function LotteryPage({
       },
       {
         ...lotteryContractData,
-        functionName: "STATER_FEE",
+        functionName: "creatorFee",
       },
     ],
   });
@@ -60,8 +60,8 @@ export default function LotteryPage({
   const prizePool = formatEther((data && data[1] && (data[1].result as bigint)) || 0n);
   const ticketPrice = formatEther((data && data[2] && (data[2].result as bigint)) || 0n);
   const devFee = (data && data[3] && (data[3].result as bigint)) || 0n;
-  const starterFee = (data && data[4] && (data[4].result as bigint)) || 0n;
-  const totalFee = formatEther(devFee + starterFee);
+  const creatorFee = (data && data[4] && (data[4].result as bigint)) || 0n;
+  const totalFee = formatEther(devFee + creatorFee);
 
   const introText = "Hi! Try my new lottery. 🎲";
 
